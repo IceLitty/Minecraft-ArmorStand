@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Minecraft Armor Stand</title>
+    <title>Minecraft 盔甲架</title>
     <meta charset="utf-8">
     <meta name="description" content="Create poses for Minecraft armorstands in a breeze! Free, fast, open source.">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="js/colpick.css">
     <link rel="icon" type="image/png" href="images/icon.png">
-    <link href='http://fonts.googleapis.com/css?family=Oswald:700' rel='stylesheet' type='text/css'>
+    <link href='js/Oswald.css' rel='stylesheet' type='text/css'>
     <script src="js/three.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -22,12 +22,9 @@
 <body>
     <script src="js/colpick.js"></script>
     <script src="js/main.js"></script>
-
     <div id="gl"></div>
-
     <div class="right card">
-
-        <h1>MINECRAFT ARMORSTAND</h1>
+        <h1>MINECRAFT 盔甲架</h1>
         <div class="padding">
             <center>
                 <a href="https://github.com/haselkern/Minecraft-ArmorStand" target="_blank"><img src="images/github.png" alt="GitHub" title="GitHub" /></a>
@@ -35,48 +32,45 @@
             </center>
                 <br>
                 <span class="padding" style="cursor: pointer;" onclick="javascript:$('#troubleshooting').slideToggle();">
-                + Troubleshooting
+                + 排除故障
                 </span>
                 <div id="troubleshooting">
-                      <b>This thing uses WebGL!</b> If you don't see anything on the left enable WebGL in your browser or visit the <a href="http://get.webgl.org/">official WebGL website</a> to troubleshoot problems.
+                      <b>本页面使用WebGL！</b>如果你在左侧看不见任何东西，你需要打开浏览器的WebGL功能或访问<a href="http://get.webgl.org/">WebGL的官方网站</a>来排除你的故障。
                 </div>
         </div>
-
         <div id="inputsection" class="padding">
-
-            <label><input type="checkbox" name="invisible">Invisible</label><br>
-            <label><input type="checkbox" name="invulnerable">Invulnerable</label><br>
-            <label><input type="checkbox" name="persistencerequired">PersistenceRequired</label><br>
-            <label><input type="checkbox" name="nobaseplate">No Base Plate</label><br>
-            <label><input type="checkbox" name="nogravity">No Gravity</label><br>
-            <label><input type="checkbox" name="showarms">Show Arms</label><br>
-            <label><input type="checkbox" name="small">Small</label><br>
-
+            <label><input type="checkbox" name="invisible">隐形</label><br>
+            <label><input type="checkbox" name="invulnerable">无敌</label><br>
+            <label><input type="checkbox" name="persistencerequired">不会自然刷新掉</label><br>
+            <label><input type="checkbox" name="nobaseplate">无底座</label><br>
+            <label><input type="checkbox" name="nogravity">无重力</label><br>
+            <label><input type="checkbox" name="showarms">显示胳膊</label><br>
+            <label><input type="checkbox" name="small">小型</label><br>
             <table class="rotations">
                 <tr>
-                    <td>Rotation:</td>
+                    <td>旋转角度:</td>
                     <td colspan="3"><input type="range" name="rotation" min="0" max="360" value="0"></td>
                 </tr>
                 <tr>
-                    <td>Head:</td>
+                    <td>头:</td>
                     <td><input type="range" name="headX" min="0" max="360" value="0"></td>
                     <td><input type="range" name="headY" min="0" max="360" value="0"></td>
                     <td><input type="range" name="headZ" min="0" max="360" value="0"></td>
                 </tr>
                 <tr>
-                    <td>Body:</td>
+                    <td>身体:</td>
                     <td><input type="range" name="bodyX" min="0" max="360" value="0"></td>
                     <td><input type="range" name="bodyY" min="0" max="360" value="0"></td>
                     <td><input type="range" name="bodyZ" min="0" max="360" value="0"></td>
                 </tr>
                 <tr>
-                    <td>Left Leg:</td>
+                    <td>左腿:</td>
                     <td><input type="range" name="leftLegX" min="0" max="360" value="0"></td>
                     <td><input type="range" name="leftLegY" min="0" max="360" value="0"></td>
                     <td><input type="range" name="leftLegZ" min="0" max="360" value="0"></td>
                 </tr>
                 <tr>
-                    <td>Right Leg:</td>
+                    <td>右腿:</td>
                     <td><input type="range" name="rightLegX" min="0" max="360" value="0"></td>
                     <td><input type="range" name="rightLegY" min="0" max="360" value="0"></td>
                     <td><input type="range" name="rightLegZ" min="0" max="360" value="0"></td>
@@ -85,56 +79,48 @@
             <div id="inputarms">
                 <table class="rotations">
                         <tr>
-                            <td>Left Arm:</td>
+                            <td>左臂:</td>
                             <td><input type="range" name="leftArmX" min="0" max="360" value="0"></td>
                             <td><input type="range" name="leftArmY" min="0" max="360" value="0"></td>
                             <td><input type="range" name="leftArmZ" min="0" max="360" value="0"></td>
                         </tr>
                         <tr>
-                            <td>Right Arm:</td>
+                            <td>右臂:</td>
                             <td><input type="range" name="rightArmX" min="0" max="360" value="0"></td>
                             <td><input type="range" name="rightArmY" min="0" max="360" value="0"></td>
                             <td><input type="range" name="rightArmZ" min="0" max="360" value="0"></td>
                         </tr>
                 </table>
             </div>
-
             <select id="equipmode">
-                <option value="none">No Equipment</option>
-                <option value="1.8">Minecraft 1.8- Equipment</option>
-                <option value="1.9">Minecraft 1.9+ Equipment</option>
+                <option value="none">无装甲</option>
+                <option value="1.8">Minecraft 1.8- 装备格式</option>
+                <option value="1.9">Minecraft 1.9+ 装备格式</option>
             </select>
             <div id="customequipment">
                 <div class="padding">
-                    Enter the text id of an item (for example <i>stone</i> or <i>iron_sword</i>) into the appropriate slots. You can enter an arbitrary item for the head or hand, but the other slots must contain an appropriate item.
-
-                    <input type="text" class="equipment" name="equipHandRight" placeholder="Item in right hand">
-                    <input type="text" class="equipment" id="equipHandLeft" name="equipHandLeft" placeholder="Item in left hand">
-
-                    <input type="text" class="equipment" name="equipShoes" placeholder="Shoes">
+                    输入物品文本id(例如<i>stone</i>或<i>iron_sword</i>)在对应的栏位。你可以输入任意物品在头上和手上，但是其他栏位必须是对应的物品种类。
+                    <input type="text" class="equipment" name="equipHandRight" placeholder="右手物品">
+                    <input type="text" class="equipment" id="equipHandLeft" name="equipHandLeft" placeholder="左手物品">
+                    <input type="text" class="equipment" name="equipShoes" placeholder="靴子">
                     <div class="colorfield" id="shoecolor"></div>
-
-                    <input type="text" class="equipment" name="equipLeggings" placeholder="Leggings">
+                    <input type="text" class="equipment" name="equipLeggings" placeholder="护腿">
                     <div class="colorfield" id="leggingscolor"></div>
-
-                    <input type="text" class="equipment" name="equipChestplate" placeholder="Chestplate">
+                    <input type="text" class="equipment" name="equipChestplate" placeholder="胸甲">
                     <div class="colorfield" id="chestplatecolor"></div>
-
-                    <input type="text" class="equipment" name="equipHelmet" placeholder="Helmet">
+                    <input type="text" class="equipment" name="equipHelmet" placeholder="头盔">
                     <div class="colorfield" id="helmetcolor"></div>
-
-                    <br>Helmet specifies
+                    <br>指定头部
                     <select id="equipCustomHeadMode">
-                        <option value="item">Item Name</option>
-                        <option value="player">Player Name</option>
-                        <option value="url">Image URL</option>
+                        <option value="item">物品名</option>
+                        <option value="player">玩家名</option>
+                        <option value="url">皮肤图片URL</option>
                     </select>
                 </div>
             </div>
             <br>
-
             <!-- THANK YOU to reddit user Oozebull for this part. -->
-            <label><input type="checkbox" name="usedisabledslots">Lock Slot Interaction</label>
+            <label><input type="checkbox" name="usedisabledslots">槽位加锁设定</label>
             <div id="disabledslots" class="padding">
                 <div>
                     <span class="first">&nbsp;</span>
@@ -144,9 +130,8 @@
                     <span class="sprite" style="background-position: 0px -48px"></span>
                     <span class="sprite" style="background-position: 0px -64px"></span>
                 </div>
-
                 <div>
-                    <span class="first">Remove</span>
+                    <span class="first">移除权限</span>
                     <span><input id="dH" type="checkbox"></input></span>
                     <span><input id="dC" type="checkbox"></input></span>
                     <span><input id="dL" type="checkbox"></input></span>
@@ -154,7 +139,7 @@
                     <span><input id="dW" type="checkbox"></input></span>
                 </div>
                 <div>
-                    <span class="first">Replace</span>
+                    <span class="first">替换权限</span>
                     <span><input id="rH" type="checkbox"></input></span>
                     <span><input id="rC" type="checkbox"></input></span>
                     <span><input id="rL" type="checkbox"></input></span>
@@ -162,7 +147,7 @@
                     <span><input id="rW" type="checkbox"></input></span>
                 </div>
                 <div>
-                    <span class="first">Place</span>
+                    <span class="first">放置权限</span>
                     <span><input id="pH" type="checkbox"></input></span>
                     <span><input id="pC" type="checkbox"></input></span>
                     <span><input id="pL" type="checkbox"></input></span>
@@ -170,22 +155,18 @@
                     <span><input id="pW" type="checkbox"></input></span>
                 </div>
             </div>
-
         </div>
-
         <div id="code" class="code"></div>
         <div id="codeinfo" class="padding"></div>
-
     </div>
-
     <div class="right card">
         <span class="padding" style="cursor: pointer;" onclick="javascript:$('#getcommandblock').slideToggle();">
-            + Obtain a command block
+            + 获得一个命令方块
         </span>
         <br>
         <div id="getcommandblock">
             <div class="padding">
-                If your command is longer than 100 characters, it needs to be executed with a <b>command block</b>. Obtain one by typing:
+                如果你的指令长度超过100个字符，那就需要使用<b>命令方块</b>来执行，使用如下命令来获得命令方块:
             </div>
             <div class="code">
                 /give @p command_block
